@@ -26,11 +26,7 @@ public class SimpleApp {
             }
         }).count();
 
-        long numBs = logData.filter(new Function<String, Boolean>() {
-            public Boolean call(String s) {
-                return s.contains("b");
-            }
-        }).count();
+        long numBs = logData.filter((Function<String, Boolean>) s -> s.contains("b")).count();
 
         long numCs = logData.filter(new Function<String, Boolean>() {
             @Override
