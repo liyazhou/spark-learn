@@ -37,7 +37,7 @@ public final class JavaStatusTrackerDemo {
 
     public static void main(String[] args) throws Exception {
         SparkSession spark = SparkSession
-                .builder()
+                .builder().master("local[5]")
                 .appName(APP_NAME)
                 .getOrCreate();
 
@@ -46,6 +46,8 @@ public final class JavaStatusTrackerDemo {
         // Example of implementing a progress reporter for a simple job.
         JavaRDD<Integer> rdd = jsc.parallelize(Arrays.asList(1, 2, 3, 4, 5), 5).map(
                 new IdentityWithDelay<>());
+//        System.out.println(rdd.collect());
+
         JavaFutureAction<List<Integer>> jobFuture = rdd.collectAsync();
         while (!jobFuture.isDone()) {
             Thread.sleep(1000);  // 1 second
@@ -67,7 +69,7 @@ public final class JavaStatusTrackerDemo {
     public static final class IdentityWithDelay<T> implements Function<T, T> {
         @Override
         public T call(T x) throws Exception {
-            Thread.sleep(2 * 1000);  // 2 seconds
+            Thread.sleep(1 * 1000);  // 2 seconds
             return x;
         }
     }

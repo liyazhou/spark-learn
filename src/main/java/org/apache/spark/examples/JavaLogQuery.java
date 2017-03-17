@@ -89,9 +89,11 @@ public final class JavaLogQuery {
 
         JavaPairRDD<Tuple3<String, String, String>, Stats> extracted =
                 dataSet.mapToPair(s -> new Tuple2<>(extractKey(s), extractStats(s)));
-
+        System.out.println("extracted");
+        System.out.println(extracted.collect());
         JavaPairRDD<Tuple3<String, String, String>, Stats> counts = extracted.reduceByKey(Stats::merge);
-
+//        System.out.println("counts");
+//        System.out.println(counts.collect());
         List<Tuple2<Tuple3<String, String, String>, Stats>> output = counts.collect();
         for (Tuple2<?, ?> t : output) {
             System.out.println(t._1() + "\t" + t._2());
