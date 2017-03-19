@@ -2,3 +2,9 @@
 spark-learn.iml
 target/
 .idea
+checkpoint/
+data/
+namesAndAges.parquet
+namesAndFavColors.parquet
+people.parquet
+spark-warehouse/
