@@ -49,10 +49,10 @@ public class JavaSQLDataSourceExample {
                 .config("spark.some.config.option", "some-value")
                 .getOrCreate();
         spark.sparkContext().setLogLevel("ERROR");
-//    runBasicDataSourceExample(spark);
-//    runBasicParquetExample(spark);
-//    runParquetSchemaMergingExample(spark);
-//    runJsonDatasetExample(spark);
+        runBasicDataSourceExample(spark);
+        runBasicParquetExample(spark);
+        runParquetSchemaMergingExample(spark);
+        runJsonDatasetExample(spark);
         runJdbcDatasetExample(spark);
 
         spark.stop();

@@ -68,9 +68,9 @@ public class JavaSparkSQLExample {
         // $example off:init_session$
         spark.sparkContext().setLogLevel("ERROR");
 
-//        runBasicDataFrameExample(spark);
-//        runDatasetCreationExample(spark);
-//        runInferSchemaExample(spark);
+        runBasicDataFrameExample(spark);
+        runDatasetCreationExample(spark);
+        runInferSchemaExample(spark);
         runProgrammaticSchemaExample(spark);
 
         spark.stop();
