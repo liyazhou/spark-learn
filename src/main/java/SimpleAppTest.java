@@ -23,7 +23,6 @@ public class SimpleAppTest {
         JavaSparkContext sc = new JavaSparkContext(conf);
 //        sc.addJar("/Users/liyazhou/workspace/spark-learn/target/spark-learn-1.0-SNAPSHOT.jar");
         JavaRDD<String> logData = sc.textFile(logFile).cache();
-
         long numAs = logData.filter(new Function<String, Boolean>() {
             public Boolean call(String s) {
                 return s.contains("a");
