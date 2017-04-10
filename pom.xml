@@ -98,6 +98,41 @@
             <artifactId>socialshops-event</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency> <!-- Cassandra -->
+            <groupId>com.datastax.spark</groupId>
+            <artifactId>spark-cassandra-connector_2.10</artifactId>
+            <version>1.0.0-rc5</version>
+        </dependency>
+        <dependency> <!-- Cassandra -->
+            <groupId>com.datastax.spark</groupId>
+            <artifactId>spark-cassandra-connector-java_2.10</artifactId>
+            <version>1.0.0-rc5</version>
+        </dependency>
+        <dependency> <!-- Elastic search connector -->
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch-hadoop-mr</artifactId>
+            <version>2.0.0.RC1</version>
+        </dependency>
+        <dependency> <!-- Jetty demmo -->
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-client</artifactId>
+            <version>8.1.14.v20131031</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_2.11</artifactId>
+            <version>2.2.1</version>
+        </dependency>
     </dependencies>
 
     <build>

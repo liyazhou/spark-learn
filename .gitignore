@@ -8,3 +8,6 @@ namesAndAges.parquet
 namesAndFavColors.parquet
 people.parquet
 spark-warehouse/
+/.idea/
+/spark-learn.iml
+/test/
