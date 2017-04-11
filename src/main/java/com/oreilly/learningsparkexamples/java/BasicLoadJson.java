@@ -27,10 +27,10 @@ public class BasicLoadJson {
                 master, "basicloadjson", System.getenv("SPARK_HOME"), System.getenv("JARS"));
         JavaRDD<String> input = sc.textFile(fileName);
         JavaRDD<Person> result = input.mapPartitions(new ParseJson()).filter(new LikesPandas());
-        System.out.println(result.count());
-        System.out.println(result.collect());
-//        JavaRDD<String> formatted = result.mapPartitions(new WriteJson());
-//        formatted.saveAsTextFile(outfile);
+//        System.out.println(result.count());
+//        System.out.println(result.collect());
+        JavaRDD<String> formatted = result.mapPartitions(new WriteJson());
+        formatted.saveAsTextFile(outfile);
     }
 
     public static class Person implements java.io.Serializable {
